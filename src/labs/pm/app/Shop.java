@@ -42,16 +42,25 @@ public class Shop {
 
         ProductManager pm = new ProductManager("en-GB");
 
-        pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
-//        pm.printProductReport(101);
+        //pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
+        pm.parseProduct("D,101,Tea,1.99,0,2019-09-19");
+        //pm.parseProduct("D,101,Tea,1.99,0");        
+        pm.printProductReport(101);
 
-        pm.reviewProduct(101, Rating.FOUR_STAR, "Nice hot cup of tea");
-        pm.reviewProduct(101, Rating.TWO_STAR, "Rather weak tea");
-        pm.reviewProduct(101, Rating.FOUR_STAR, "Fine tea");
-        pm.reviewProduct(101, Rating.FOUR_STAR, "Good tea");
-        pm.reviewProduct(101, Rating.FIVE_STAR, "Perfect tea");
-        pm.reviewProduct(101, Rating.THREE_STAR, "Just add some lemon");
-//        pm.printProductReport(101);
+        pm.parseReview("101,4,Nice hot cup of tea");
+        pm.parseReview("101,2,Rather weak tea");
+        pm.parseReview("101,4,Fine tea");
+        pm.parseReview("101,4,Good tea");
+        pm.parseReview("101,5,Perfect tea");  
+        pm.parseReview("101,3,Just add some lemon");        
+
+//        pm.reviewProduct(101, Rating.FOUR_STAR, "Nice hot cup of tea");       
+//        pm.reviewProduct(101, Rating.TWO_STAR, "Rather weak tea");
+//        pm.reviewProduct(101, Rating.FOUR_STAR, "Fine tea");
+//        pm.reviewProduct(101, Rating.FOUR_STAR, "Good tea");
+//        pm.reviewProduct(101, Rating.FIVE_STAR, "Perfect tea");
+//        pm.reviewProduct(101, Rating.THREE_STAR, "Just add some lemon");
+        pm.printProductReport(101);
 
 //        pm.changeLocale("ru-RU");
         pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
@@ -60,10 +69,12 @@ public class Shop {
         pm.reviewProduct(102, Rating.FIVE_STAR, "It's perfect with ten spoons of sugar!");
 //        pm.printProductReport(102);
 
-        pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), Rating.NOT_RATED, LocalDate.now().plusDays(2));
-        pm.reviewProduct(103, Rating.FIVE_STAR, "Very nice cake");
-        pm.reviewProduct(103, Rating.FOUR_STAR, "It good, but I ve expected more chocolate ");
-        pm.reviewProduct(103, Rating.FIVE_STAR, "This cake is pe feet!");
+        pm.parseProduct("F,103,Cake,3.99,0,2019-09-19");
+        pm.printProductReport(103);
+//        pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), Rating.NOT_RATED, LocalDate.now().plusDays(2));
+//        pm.reviewProduct(103, Rating.FIVE_STAR, "Very nice cake");
+//        pm.reviewProduct(103, Rating.FOUR_STAR, "It good, but I ve expected more chocolate ");
+//        pm.reviewProduct(103, Rating.FIVE_STAR, "This cake is pe feet!");
 //        pm.printProductReport(103);
 
         pm.createProduct(104, "Cookie", BigDecimal.valueOf(2.99), Rating.NOT_RATED, LocalDate.now());
