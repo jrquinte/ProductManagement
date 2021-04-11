@@ -16,15 +16,7 @@
  */
 package labs.pm.app;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.Comparator;
-import java.util.Locale;
-import labs.pm.data.Drink;
-import labs.pm.data.Food;
-import labs.pm.data.Product;
 import labs.pm.data.ProductManager;
-import labs.pm.data.Rating;
 
 /**
  * {@code Shop} class represents an application that manages Products
@@ -40,21 +32,9 @@ public class Shop {
      */
     public static void main(String[] args) {
 
-        ProductManager pm = new ProductManager("en-GB");
-        //pm.printProductReport(101);
-//        pm.createProduct(164, "Kombucha", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
-//        pm.reviewProduct(164, Rating.TWO_STAR, "Looks like tea but is it? (Mem)");
-//        pm.reviewProduct(164, Rating.FOUR_STAR, "Fine tea (Mem)");
-//        pm.reviewProduct(164, Rating.FOUR_STAR, "This is not tea (Mem)");
-//        pm.reviewProduct(164, Rating.FIVE_STAR, "Perfect! (Mem)");
-//        //pm.printProductReport(164);
-//        pm.dumpData();
-//        pm.restoreData();
-//
-//        pm.printProductReport(105);
-//        pm.printProductReport(164);        
-//        pm.printProducts(p -> p.getPrice().floatValue() < 2, (Product p1, Product p2) -> p2.getRating().ordinal() - p1.getRating().ordinal());
-//        pm.getDiscounts().forEach((rating, discount) -> System.out.println(rating + "\t" + discount));
+        ProductManager pm = ProductManager.getInstance(); //ProductManager();
+        pm.printProductReport(101,"en-GB");
+        pm.printProductReport(103,"ru-RU");
     }
 
 }
